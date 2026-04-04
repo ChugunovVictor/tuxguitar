@@ -1,0 +1,13 @@
+plugins {
+    id 'java'
+}
+
+sourceSets {
+    main.java.srcDirs = ["src/main/java"]
+    test.java.srcDirs = ["src/test/java"]
+}
+
+dependencies {
+    implementation "org.apache.commons:commons-compress:1.26.0"
+    implementation "commons-io:commons-io:2.15.1"
+}

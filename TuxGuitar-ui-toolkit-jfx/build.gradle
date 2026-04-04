@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+}
+
+sourceSets {
+    main.java.srcDirs = ["src"]
+    main.resources.srcDirs = ["resources"]
+}
+
+javafx {
+    version = "21.0.5"
+    modules = ["javafx.base", "javafx.controls", "javafx.graphics", "javafx.fxml", "javafx.web"]
+}
+
+dependencies {
+    implementation project(':TuxGuitar-lib')
+    implementation project(':TuxGuitar-awt-graphics')
+    implementation project(':TuxGuitar-ui-toolkit')
+}

@@ -1,0 +1,38 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        google()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+javafx {
+    version = "21.0.5"
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.web', 'javafx.graphics', 'javafx.base' ]
+}
+
+application {
+    mainClass = 'app.tuxguitar.app.TGMainSingleton'
+}
+
+dependencies {
+    testImplementation(libs.junit)
+    implementation  "org.apache.commons:commons-compress:1.26.0"
+    implementation  "commons-io:commons-io:2.15.1"
+    implementation project(':TuxGuitar')
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

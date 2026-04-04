@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="17">
+      <module name="tuxguitar" target="9" />
+      <module name="tuxguitar-awt-graphics" target="9" />
+      <module name="tuxguitar-editor-utils" target="9" />
+      <module name="tuxguitar-lib" target="9" />
+      <module name="tuxguitar-pom" target="9" />
+      <module name="tuxguitar-ui-toolkit" target="9" />
+      <module name="tuxguitar-ui-toolkit-jfx" target="9" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="tuxguitar" options="-Xlint:all" />
+      <module name="tuxguitar-awt-graphics" options="-Xlint:all" />
+      <module name="tuxguitar-editor-utils" options="-Xlint:all" />
+      <module name="tuxguitar-lib" options="-Xlint:all" />
+      <module name="tuxguitar-pom" options="-Xlint:all" />
+      <module name="tuxguitar-ui-toolkit" options="-Xlint:all" />
+      <module name="tuxguitar-ui-toolkit-jfx" options="-Xlint:all" />
+    </option>
+  </component>
+</project>
