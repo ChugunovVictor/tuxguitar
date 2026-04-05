@@ -13,6 +13,7 @@ import app.tuxguitar.app.transport.TGTransport;
 import app.tuxguitar.app.ui.TGApplication;
 import app.tuxguitar.app.view.component.tab.Caret;
 import app.tuxguitar.app.view.component.tab.TablatureEditor;
+import app.tuxguitar.app.view.main.TGWindow;
 import app.tuxguitar.app.view.util.TGBufferedPainterListenerLocked;
 import app.tuxguitar.app.view.util.TGBufferedPainterLocked.TGBufferedPainterHandle;
 import app.tuxguitar.document.TGDocumentContextAttributes;
@@ -38,14 +39,7 @@ import app.tuxguitar.ui.event.UISelectionListener;
 import app.tuxguitar.ui.layout.UITableLayout;
 import app.tuxguitar.ui.resource.UIImage;
 import app.tuxguitar.ui.resource.UIPainter;
-import app.tuxguitar.ui.widget.UIButton;
-import app.tuxguitar.ui.widget.UICanvas;
-import app.tuxguitar.ui.widget.UIControl;
-import app.tuxguitar.ui.widget.UIImageView;
-import app.tuxguitar.ui.widget.UILabel;
-import app.tuxguitar.ui.widget.UIPanel;
-import app.tuxguitar.ui.widget.UISeparator;
-import app.tuxguitar.ui.widget.UIWindow;
+import app.tuxguitar.ui.widget.*;
 import app.tuxguitar.util.TGContext;
 import app.tuxguitar.util.TGMusicKeyUtils;
 
@@ -56,10 +50,10 @@ public class TGPiano {
 	private static final int MAX_OCTAVES = 8;
 	private static final int MIN_NOTE = TGMusicKeyUtils.midiNote(0, 0);	// C0
 	private static final int MAX_NOTE = MIN_NOTE + MAX_OCTAVES * TYPE_NOTES.length;
-	private static final int NATURAL_WIDTH = 15;
-	private static final int SHARP_WIDTH = 8;
-	private static final int NATURAL_HEIGHT = 60;
-	private static final int SHARP_HEIGHT = 40;
+	private static final int NATURAL_WIDTH = 24;
+	private static final int SHARP_WIDTH = 16;
+	private static final int NATURAL_HEIGHT = 120;
+	private static final int SHARP_HEIGHT = 80;
 
 	private TGContext context;
 	private int duration;
@@ -80,7 +74,7 @@ public class TGPiano {
 	private TGBeat externalBeat;
 	private UIImage image;
 
-	public TGPiano(TGContext context, UIWindow parent) {
+	public TGPiano(TGContext context, UIContainer parent) {
 		this.context = context;
 		this.config = new TGPianoConfig(context);
 		this.config.load();
@@ -94,6 +88,11 @@ public class TGPiano {
 		TuxGuitar.getInstance().getKeyBindingManager().appendListenersTo(this.toolComposite);
 		TuxGuitar.getInstance().getKeyBindingManager().appendListenersTo(this.canvas);
 	}
+
+    public void computePackedSize() {
+        this.control.getLayout().set(this.canvas, UITableLayout.PACKED_HEIGHT, Float.valueOf(NATURAL_HEIGHT));
+        this.control.computePackedSize(null, null);
+    }
 
 	public void createControlLayout() {
 		UITableLayout uiLayout = new UITableLayout(0f);
@@ -633,8 +632,8 @@ public class TGPiano {
 	}
 
 	public void configure(){
-		this.config.configure((UIWindow) this.control.getParent());
-	}
+        this.config.configure(TGWindow.getInstance(this.context).getWindow());
+    }
 
 	public void reloadFromConfig() {
 		this.setChanges(true);

@@ -12,7 +12,6 @@ public class TGConfigKeys {
 	public static final String HEIGHT = "window.height";
 	public static final String SHOW_INSTRUMENTS = "show.instruments";
 	public static final String SHOW_TRANSPORT = "show.transport";
-	public static final String SHOW_FRETBOARD = "show.fretboard";
 	public static final String SHOW_MATRIX = "show.matrix";
 	public static final String SHOW_PIANO = "show.piano";
 	public static final String SHOW_MARKERS = "show.markers";
@@ -61,15 +60,6 @@ public class TGConfigKeys {
 	public static final String MIDI_PORT = "midi.port";
 	public static final String MIDI_SEQUENCER = "midi.sequencer";
 	public static final String MAX_HISTORY_FILES = "history.max-files";
-	public static final String FRETBOARD_STRING_SPACING = "fretboard.string-spacing";
-	public static final String FRETBOARD_STYLE = "fretboard.style";
-	public static final String FRETBOARD_FONT = "fretboard.font";
-	public static final String FRETBOARD_COLOR_BACKGROUND = "fretboard.color.background";
-	public static final String FRETBOARD_COLOR_STRING = "fretboard.color.string";
-	public static final String FRETBOARD_COLOR_FRET_POINT = "fretboard.color.fret-point";
-	public static final String FRETBOARD_COLOR_NOTE = "fretboard.color.note";
-	public static final String FRETBOARD_COLOR_SCALE = "fretboard.color.scale";
-	public static final String FRETBOARD_DIRECTION = "fretboard.direction";
 	public static final String PIANO_COLOR_KEY_NATURAL = "piano.color.natural-key";
 	public static final String PIANO_COLOR_KEY_NOT_NATURAL = "piano.color.not-natural-key";
 	public static final String PIANO_COLOR_NOTE = "piano.color.note";

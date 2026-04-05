@@ -33,7 +33,6 @@ import app.tuxguitar.app.view.component.table.TGTableViewer;
 import app.tuxguitar.app.view.dialog.browser.main.TGBrowserDialog;
 import app.tuxguitar.app.view.dialog.channel.TGChannelManagerDialog;
 import app.tuxguitar.app.view.dialog.chord.TGCustomChordManager;
-import app.tuxguitar.app.view.dialog.fretboard.TGFretBoardEditor;
 import app.tuxguitar.app.view.dialog.lyric.TGLyricEditor;
 import app.tuxguitar.app.view.dialog.matrix.TGMatrixEditor;
 import app.tuxguitar.app.view.dialog.piano.TGPianoEditor;
@@ -209,10 +208,6 @@ public class TuxGuitar {
 
 	public TablatureEditor getTablatureEditor(){
 		return TablatureEditor.getInstance(this.context);
-	}
-
-	public TGFretBoardEditor getFretBoardEditor(){
-		return TGFretBoardEditor.getInstance(this.context);
 	}
 
 	public TGPianoEditor getPianoEditor(){

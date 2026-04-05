@@ -97,7 +97,6 @@ import app.tuxguitar.app.action.impl.transport.TGTransportStopAction;
 import app.tuxguitar.app.action.impl.view.TGOpenMainToolBarSettingsDialogAction;
 import app.tuxguitar.app.action.impl.view.TGToggleChannelsDialogAction;
 import app.tuxguitar.app.action.impl.view.TGToggleEditToolbarAction;
-import app.tuxguitar.app.action.impl.view.TGToggleFretBoardEditorAction;
 import app.tuxguitar.app.action.impl.view.TGToggleMatrixEditorAction;
 import app.tuxguitar.app.action.impl.view.TGTogglePianoEditorAction;
 import app.tuxguitar.app.action.impl.view.TGToggleTableViewerAction;
@@ -109,7 +108,7 @@ import app.tuxguitar.app.view.component.tab.TablatureEditor;
 import app.tuxguitar.app.view.component.tab.edit.EditorKit;
 import app.tuxguitar.app.view.component.table.TGTableViewer;
 import app.tuxguitar.app.view.dialog.channel.TGChannelManagerDialog;
-import app.tuxguitar.app.view.dialog.fretboard.TGFretBoardEditor;
+import app.tuxguitar.app.view.dialog.piano.TGPianoEditor;
 import app.tuxguitar.app.view.dialog.transport.TGTransportDialog;
 import app.tuxguitar.app.view.toolbar.edit.TGEditToolBar;
 import app.tuxguitar.document.TGDocumentContextAttributes;
@@ -318,13 +317,13 @@ public class TGMainToolBarConfigMap {
 						return TGTableViewer.getInstance(context).isVisible();
 					}
 				});
-		registerCheckable("view.show-fretboard", TGToggleFretBoardEditorAction.NAME, TGIconManager.FRETBOARD,
-				new TGMainToolBarItemUpdater() {
-					@Override
-					public boolean checked(TGContext context, boolean isRunning) {
-						return TGFretBoardEditor.getInstance(context).isVisible();
-					}
-				});
+        registerCheckable("view.show-piano", TGTogglePianoEditorAction.NAME, TGIconManager.PIANO,
+                new TGMainToolBarItemUpdater() {
+                    @Override
+                    public boolean checked(TGContext context, boolean isRunning) {
+                        return TGPianoEditor.getInstance(context).isVisible();
+                    }
+                });
 		registerCheckable("view.show-instruments", TGToggleChannelsDialogAction.NAME, TGIconManager.INSTRUMENTS,
 				new TGMainToolBarItemUpdater() {
 					@Override
@@ -393,12 +392,6 @@ public class TGMainToolBarConfigMap {
 			@Override
 			public boolean checked(TGContext context, boolean isRunning) {
 				return (!TGTransportDialog.getInstance(context).isDisposed());
-			}
-		});
-		registerCheckable("view.show-piano", TGTogglePianoEditorAction.NAME, TGIconManager.PIANO, new TGMainToolBarItemUpdater() {
-			@Override
-			public boolean checked(TGContext context, boolean isRunning) {
-				return (!TuxGuitar.getInstance().getPianoEditor().isDisposed());
 			}
 		});
 		registerCheckable("view.show-matrix", TGToggleMatrixEditorAction.NAME, TGIconManager.MATRIX, new TGMainToolBarItemUpdater() {

@@ -5,7 +5,6 @@ import java.util.List;
 
 import app.tuxguitar.app.TuxGuitar;
 import app.tuxguitar.app.view.component.tab.edit.EditorKit;
-import app.tuxguitar.app.view.dialog.fretboard.TGFretBoardConfig;
 import app.tuxguitar.graphics.control.TGLayout;
 import app.tuxguitar.ui.resource.UIFontModel;
 import app.tuxguitar.util.properties.TGProperties;
@@ -41,9 +40,8 @@ public class TGConfigDefaults{
 		loadProperty(properties, TGConfigKeys.HEIGHT, 675);
 		loadProperty(properties, TGConfigKeys.SHOW_INSTRUMENTS, false);
 		loadProperty(properties, TGConfigKeys.SHOW_TRANSPORT, false);
-		loadProperty(properties, TGConfigKeys.SHOW_FRETBOARD, false);
 		loadProperty(properties, TGConfigKeys.SHOW_MATRIX, false);
-		loadProperty(properties, TGConfigKeys.SHOW_PIANO, false);
+		loadProperty(properties, TGConfigKeys.SHOW_PIANO, true);
 		loadProperty(properties, TGConfigKeys.SHOW_MARKERS, false);
 		loadProperty(properties, TGConfigKeys.SHOW_MAIN_TOOLBAR, true);
 		loadProperty(properties, TGConfigKeys.SHOW_EDIT_TOOLBAR, true);
@@ -89,15 +87,6 @@ public class TGConfigDefaults{
 		loadProperty(properties, TGConfigKeys.MIDI_PORT, "tuxguitar-synth.port");
 		loadProperty(properties, TGConfigKeys.MIDI_SEQUENCER, "tuxguitar.sequencer");
 		loadProperty(properties, TGConfigKeys.MAX_HISTORY_FILES, 10);
-		loadProperty(properties, TGConfigKeys.FRETBOARD_STRING_SPACING, 20);
-		loadProperty(properties, TGConfigKeys.FRETBOARD_STYLE, TGFretBoardConfig.DISPLAY_TEXT_SCALE);
-		loadProperty(properties, TGConfigKeys.FRETBOARD_FONT, (DEFAULT_FONT_NAME + ",8,true,false"));
-		loadProperty(properties, TGConfigKeys.FRETBOARD_COLOR_BACKGROUND, "0,0,0");
-		loadProperty(properties, TGConfigKeys.FRETBOARD_COLOR_STRING, "227,217,217");
-		loadProperty(properties, TGConfigKeys.FRETBOARD_COLOR_FRET_POINT, "192,192,192");
-		loadProperty(properties, TGConfigKeys.FRETBOARD_COLOR_NOTE, "42,85,128");
-		loadProperty(properties, TGConfigKeys.FRETBOARD_COLOR_SCALE, "128,32,32");
-		loadProperty(properties, TGConfigKeys.FRETBOARD_DIRECTION, TGFretBoardConfig.DIRECTION_RIGHT);
 		loadProperty(properties, TGConfigKeys.PIANO_COLOR_KEY_NATURAL, "255,255,255");
 		loadProperty(properties, TGConfigKeys.PIANO_COLOR_KEY_NOT_NATURAL, "0,0,0");
 		loadProperty(properties, TGConfigKeys.PIANO_COLOR_NOTE, "42,85,128");
