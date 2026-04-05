@@ -5,12 +5,12 @@ import app.tuxguitar.app.view.controller.TGViewContext;
 
 public class TGPianoEditorController implements TGToggleViewController {
 
-	public void toggleView(TGViewContext context) {
-		TGPianoEditor editor = TGPianoEditor.getInstance(context.getContext());
-		if( editor.isDisposed()){
-			editor.show();
-		} else {
-			editor.dispose();
-		}
-	}
+    public void toggleView(TGViewContext context) {
+        TGPianoEditor editor = TGPianoEditor.getInstance(context.getContext());
+        if( editor.isVisible()){
+            editor.hidePiano();
+        } else {
+            editor.showPiano();
+        }
+    }
 }

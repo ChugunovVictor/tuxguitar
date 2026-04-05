@@ -49,7 +49,6 @@ public class TGIconManager {
 	public static final String REDO = "edit_redo.22x22.svg";
 	public static final String TOOLBAR_EDIT = "toolbar_edit.22x22.svg";
 	public static final String TABLE_VIEWER = "table_viewer.22x22.svg";
-	public static final String FRETBOARD = "fretboard.22x22.svg";
 	public static final String INSTRUMENTS = "mixer.22x22.svg";
 	public static final String MATRIX = "matrix.22x22.svg";
 	public static final String PIANO = "piano.22x22.svg";
@@ -194,10 +193,6 @@ public class TGIconManager {
 	private UIImage optionSound;
 	private UIImage optionLanguage;
 	private UIImage optionSkin;
-	private UIImage fretboardFirstFret;
-	private UIImage fretboardFret;
-	private UIImage fretboardSmaller;
-	private UIImage fretboardBigger;
 	private Map<Integer,UIImage> divisionTypes;
 	private UIImage fileImport;
 	private UIImage fileExport;
@@ -339,11 +334,6 @@ public class TGIconManager {
 			Integer enters = TGDivisionType.DIVISION_TYPES[i].getEnters();
 			this.divisionTypes.put(enters, loadIcon(getDivisionTypeIconFileName(enters)));
 		}
-		loadIcon(FRETBOARD);
-		this.fretboardFirstFret = loadIcon("firstfret.5x50.svg");
-		this.fretboardFret = loadIcon("fret.2x45.svg");
-		this.fretboardSmaller = loadIcon("fretboard_smaller.22x22.svg");
-		this.fretboardBigger = loadIcon("fretboard_bigger.22x22.svg");
 		loadIcon(CHORD);
 		loadIcon(TEXT);
 		loadIcon(TIED_NOTE);
@@ -574,21 +564,6 @@ public class TGIconManager {
 		return this.fileExport;
 	}
 
-	public UIImage getFretboardFirstFret() {
-		return this.fretboardFirstFret;
-	}
-
-	public UIImage getFretboardFret() {
-		return this.fretboardFret;
-	}
-
-	public UIImage getFretboardSmaller() {
-		return this.fretboardSmaller;
-	}
-
-	public UIImage getFretboardBigger() {
-		return this.fretboardBigger;
-	}
 
 	public UIImage getMarker() {
 		return this.marker;

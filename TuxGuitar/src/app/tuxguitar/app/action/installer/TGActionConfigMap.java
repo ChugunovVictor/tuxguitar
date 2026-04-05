@@ -132,7 +132,6 @@ import app.tuxguitar.app.action.impl.view.TGOpenViewAction;
 import app.tuxguitar.app.action.impl.view.TGShowExternalBeatAction;
 import app.tuxguitar.app.action.impl.view.TGToggleChannelsDialogAction;
 import app.tuxguitar.app.action.impl.view.TGToggleEditToolbarAction;
-import app.tuxguitar.app.action.impl.view.TGToggleFretBoardEditorAction;
 import app.tuxguitar.app.action.impl.view.TGToggleMainToolbarAction;
 import app.tuxguitar.app.action.impl.view.TGToggleMatrixEditorAction;
 import app.tuxguitar.app.action.impl.view.TGTogglePianoEditorAction;
@@ -638,7 +637,6 @@ public class TGActionConfigMap extends TGActionMap<TGActionConfig> {
 		this.map(TGOpenTransportModeDialogAction.NAME, LOCKABLE | SYNC_THREAD |SHORTCUT);
 		this.map(TGOpenMarkerEditorAction.NAME, LOCKABLE | SYNC_THREAD |SHORTCUT);
 		this.map(TGOpenTransposeDialogAction.NAME, LOCKABLE | SYNC_THREAD |DISABLE_ON_PLAY | SHORTCUT);
-		this.map(TGToggleFretBoardEditorAction.NAME, LOCKABLE | SYNC_THREAD |SHORTCUT);
 		this.map(TGTogglePianoEditorAction.NAME, LOCKABLE | SYNC_THREAD |SHORTCUT);
 		this.map(TGToggleMatrixEditorAction.NAME, LOCKABLE | SYNC_THREAD |SHORTCUT);
 		this.map(TGToggleLyricEditorAction.NAME, LOCKABLE | SYNC_THREAD |SHORTCUT);

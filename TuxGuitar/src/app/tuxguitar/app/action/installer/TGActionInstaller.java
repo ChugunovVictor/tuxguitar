@@ -133,7 +133,6 @@ import app.tuxguitar.app.action.impl.view.TGOpenViewAction;
 import app.tuxguitar.app.action.impl.view.TGShowExternalBeatAction;
 import app.tuxguitar.app.action.impl.view.TGToggleChannelsDialogAction;
 import app.tuxguitar.app.action.impl.view.TGToggleEditToolbarAction;
-import app.tuxguitar.app.action.impl.view.TGToggleFretBoardEditorAction;
 import app.tuxguitar.app.action.impl.view.TGToggleMainToolbarAction;
 import app.tuxguitar.app.action.impl.view.TGToggleMatrixEditorAction;
 import app.tuxguitar.app.action.impl.view.TGTogglePianoEditorAction;
@@ -568,7 +567,6 @@ public class TGActionInstaller {
 		installAction(new TGOpenMarkerEditorAction(context));
 		installAction(new TGOpenTransposeDialogAction(context) );
 
-		installAction(new TGToggleFretBoardEditorAction(context));
 		installAction(new TGTogglePianoEditorAction(context));
 		installAction(new TGToggleMatrixEditorAction(context));
 		installAction(new TGToggleLyricEditorAction(context));
