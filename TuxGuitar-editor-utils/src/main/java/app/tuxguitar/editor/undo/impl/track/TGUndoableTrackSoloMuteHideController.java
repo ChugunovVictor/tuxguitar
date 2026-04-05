@@ -7,13 +7,13 @@ import app.tuxguitar.editor.undo.TGUndoableEdit;
 import app.tuxguitar.song.models.TGTrack;
 import app.tuxguitar.util.TGContext;
 
-public class TGUndoableTrackSoloMuteController implements TGUndoableActionController {
+public class TGUndoableTrackSoloMuteHideController implements TGUndoableActionController {
 
 	public TGUndoableEdit startUndoable(TGContext context, TGActionContext actionContext) {
-		return TGUndoableTrackSoloMute.startUndo(context, (TGTrack) actionContext.getAttribute(TGDocumentContextAttributes.ATTRIBUTE_TRACK));
+		return TGUndoableTrackSoloMuteHide.startUndo(context, (TGTrack) actionContext.getAttribute(TGDocumentContextAttributes.ATTRIBUTE_TRACK));
 	}
 
 	public TGUndoableEdit endUndoable(TGContext context, TGActionContext actionContext, TGUndoableEdit undoableEdit) {
-		return ((TGUndoableTrackSoloMute) undoableEdit).endUndo((TGTrack) actionContext.getAttribute(TGDocumentContextAttributes.ATTRIBUTE_TRACK));
+		return ((TGUndoableTrackSoloMuteHide) undoableEdit).endUndo((TGTrack) actionContext.getAttribute(TGDocumentContextAttributes.ATTRIBUTE_TRACK));
 	}
 }

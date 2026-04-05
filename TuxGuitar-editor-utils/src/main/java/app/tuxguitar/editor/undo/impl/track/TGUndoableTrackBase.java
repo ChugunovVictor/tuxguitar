@@ -3,17 +3,7 @@ package app.tuxguitar.editor.undo.impl.track;
 import app.tuxguitar.action.TGActionContext;
 import app.tuxguitar.document.TGDocumentContextAttributes;
 import app.tuxguitar.editor.action.TGActionProcessor;
-import app.tuxguitar.editor.action.track.TGAddTrackAction;
-import app.tuxguitar.editor.action.track.TGCloneTrackAction;
-import app.tuxguitar.editor.action.track.TGCopyTrackFromAction;
-import app.tuxguitar.editor.action.track.TGMoveTrackDownAction;
-import app.tuxguitar.editor.action.track.TGMoveTrackUpAction;
-import app.tuxguitar.editor.action.track.TGRemoveTrackAction;
-import app.tuxguitar.editor.action.track.TGSetTrackChannelAction;
-import app.tuxguitar.editor.action.track.TGSetTrackInfoAction;
-import app.tuxguitar.editor.action.track.TGSetTrackLyricsAction;
-import app.tuxguitar.editor.action.track.TGSetTrackMuteAction;
-import app.tuxguitar.editor.action.track.TGSetTrackSoloAction;
+import app.tuxguitar.editor.action.track.*;
 import app.tuxguitar.editor.undo.impl.TGUndoableEditBase;
 import app.tuxguitar.song.models.TGChannel;
 import app.tuxguitar.song.models.TGColor;
@@ -84,6 +74,13 @@ public abstract class TGUndoableTrackBase extends TGUndoableEditBase{
 		tgActionProcessor.setAttribute(TGSetTrackMuteAction.ATTRIBUTE_MUTE, mute);
 		this.processByPassUndoableAction(tgActionProcessor, context);
 	}
+
+    public void setTrackHide(TGActionContext context, TGTrack track, Boolean hide) {
+        TGActionProcessor tgActionProcessor = this.createByPassUndoableAction(TGSetTrackHideAction.NAME);
+        tgActionProcessor.setAttribute(TGDocumentContextAttributes.ATTRIBUTE_TRACK, track);
+        tgActionProcessor.setAttribute(TGSetTrackHideAction.ATTRIBUTE_HIDE, hide);
+        this.processByPassUndoableAction(tgActionProcessor, context);
+    }
 
 	public void setTrackInfo(TGActionContext context, TGTrack track, String name, Integer offset, TGColor color) {
 		TGActionProcessor tgActionProcessor = this.createByPassUndoableAction(TGSetTrackInfoAction.NAME);

@@ -356,7 +356,7 @@
   <xs:complexType name="trackType">
     <xs:sequence>
       <xs:element name="name" type="xs:string"/>
-      <xs:element name="soloMute" minOccurs="0">
+      <xs:element name="soloMuteHide" minOccurs="0">
         <xs:simpleType>
           <xs:restriction base="xs:string">
             <xs:enumeration value="solo"/>

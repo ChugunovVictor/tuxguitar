@@ -234,7 +234,7 @@ public class TGSongReaderImpl extends TGStream implements TGSongReader {
 			}
 			Node nodeElement = getChildNode(nodeTrack, TAG_NAME);
 			track.setName(nodeElement.getTextContent());
-			Node node = getSiblingNode(nodeElement, TAG_SOLOMUTE);
+			Node node = getSiblingNode(nodeElement, TAG_SOLOMUTEHIDE);
 			if (node != null) {
 				track.setSolo(VAL_SOLO.equals(node.getTextContent()));
 				track.setMute(VAL_MUTE.equals(node.getTextContent()));

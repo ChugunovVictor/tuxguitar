@@ -91,7 +91,7 @@ public class TGStream {
 	protected static final String TAG_LINE_BREAK = "lineBreak";
 	protected static final String TAG_TGTRACK = "TGTrack";
 	protected static final String TAG_MAXFRET = "maxFret";
-	protected static final String TAG_SOLOMUTE = "soloMute";
+	protected static final String TAG_SOLOMUTEHIDE = "soloMuteHide";
 	protected static final String VAL_SOLO = "solo";
 	protected static final String VAL_MUTE = "mute";
 	protected static final String TAG_CHANNELID = "channelId";

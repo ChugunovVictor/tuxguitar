@@ -68,7 +68,7 @@
         </TGMeasureHeader>
         <TGTrack>
             <name>Track1.name</name>
-            <soloMute>solo</soloMute>
+            <soloMuteHide>solo</soloMuteHide>
             <channelId>1</channelId>
             <offset>-1</offset>
             <color R="10" G="20" B="30"/>

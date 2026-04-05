@@ -6,16 +6,18 @@ import app.tuxguitar.editor.undo.TGCannotUndoException;
 import app.tuxguitar.song.models.TGTrack;
 import app.tuxguitar.util.TGContext;
 
-public class TGUndoableTrackSoloMute extends TGUndoableTrackBase {
+public class TGUndoableTrackSoloMuteHide extends TGUndoableTrackBase {
 
 	private int doAction;
 	private int track;
 	private boolean undoSolo;
 	private boolean undoMute;
+	private boolean undoHide;
 	private boolean redoSolo;
 	private boolean redoMute;
+    private boolean redoHide;
 
-	private TGUndoableTrackSoloMute(TGContext context){
+	private TGUndoableTrackSoloMuteHide(TGContext context){
 		super(context);
 	}
 
@@ -28,6 +30,9 @@ public class TGUndoableTrackSoloMute extends TGUndoableTrackBase {
 		}
 		if( this.undoMute != this.redoMute ){
 			this.setTrackMute(actionContext, this.getTrack(this.track), this.redoMute );
+		}
+        if( this.undoHide != this.redoHide ){
+			this.setTrackHide(actionContext, this.getTrack(this.track), this.redoHide );
 		}
 		this.doAction = UNDO_ACTION;
 	}
@@ -42,6 +47,9 @@ public class TGUndoableTrackSoloMute extends TGUndoableTrackBase {
 		if( this.undoMute != this.redoMute ){
 			this.setTrackMute(actionContext, this.getTrack(this.track), this.undoMute );
 		}
+        if( this.undoHide != this.redoHide ){
+            this.setTrackHide(actionContext, this.getTrack(this.track), this.undoHide );
+        }
 		this.doAction = REDO_ACTION;
 	}
 
@@ -53,19 +61,21 @@ public class TGUndoableTrackSoloMute extends TGUndoableTrackBase {
 		return (this.doAction == UNDO_ACTION);
 	}
 
-	public static TGUndoableTrackSoloMute startUndo(TGContext context, TGTrack track){
-		TGUndoableTrackSoloMute undoable = new TGUndoableTrackSoloMute(context);
+	public static TGUndoableTrackSoloMuteHide startUndo(TGContext context, TGTrack track){
+		TGUndoableTrackSoloMuteHide undoable = new TGUndoableTrackSoloMuteHide(context);
 		undoable.doAction = UNDO_ACTION;
 		undoable.track = track.getNumber();
 		undoable.undoSolo = track.isSolo();
 		undoable.undoMute = track.isMute();
+		undoable.undoHide = track.isHide();
 
 		return undoable;
 	}
 
-	public TGUndoableTrackSoloMute endUndo(TGTrack track){
+	public TGUndoableTrackSoloMuteHide endUndo(TGTrack track){
 		this.redoSolo = track.isSolo();
 		this.redoMute = track.isMute();
+		this.redoHide = track.isHide();
 
 		return this;
 	}

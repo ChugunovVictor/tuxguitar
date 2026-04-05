@@ -198,9 +198,9 @@ public class TGSongWriterImpl extends TGStream implements TGSongWriter {
 			this.addAttributeInt(nodeTrack, TAG_MAXFRET, track.getMaxFret());
 		}
 		if (track.isMute()) {
-			this.addNode(nodeTrack, TAG_SOLOMUTE, VAL_MUTE);
+			this.addNode(nodeTrack, TAG_SOLOMUTEHIDE, VAL_MUTE);
 		} else if (track.isSolo()) {
-			this.addNode(nodeTrack, TAG_SOLOMUTE, VAL_SOLO);
+			this.addNode(nodeTrack, TAG_SOLOMUTEHIDE, VAL_SOLO);
 		}
 		this.addNodeInt(nodeTrack, TAG_CHANNELID, track.getChannelId());
 		if (track.getOffset() != 0) {

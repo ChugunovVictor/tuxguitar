@@ -309,7 +309,7 @@ import app.tuxguitar.editor.undo.impl.track.TGUndoableRemoveTrackController;
 import app.tuxguitar.editor.undo.impl.track.TGUndoableTrackGenericController;
 import app.tuxguitar.editor.undo.impl.track.TGUndoableTrackInfoController;
 import app.tuxguitar.editor.undo.impl.track.TGUndoableTrackLyricsController;
-import app.tuxguitar.editor.undo.impl.track.TGUndoableTrackSoloMuteController;
+import app.tuxguitar.editor.undo.impl.track.TGUndoableTrackSoloMuteHideController;
 
 
 public class TGActionConfigMap extends TGActionMap<TGActionConfig> {
@@ -418,8 +418,8 @@ public class TGActionConfigMap extends TGActionMap<TGActionConfig> {
 		//track actions
 		this.map(TGAddNewTrackAction.NAME, LOCKABLE | DISABLE_ON_PLAY | SHORTCUT, new TGUpdateAddedTrackController(), new TGUndoableAddTrackController());
 		this.map(TGAddTrackAction.NAME, LOCKABLE | DISABLE_ON_PLAY, new TGUpdateAddedTrackController(), new TGUndoableAddTrackController());
-		this.map(TGSetTrackMuteAction.NAME, LOCKABLE, new TGUpdatePlayerTracksController(), new TGUndoableTrackSoloMuteController());
-		this.map(TGSetTrackSoloAction.NAME, LOCKABLE, new TGUpdatePlayerTracksController(), new TGUndoableTrackSoloMuteController());
+		this.map(TGSetTrackMuteAction.NAME, LOCKABLE, new TGUpdatePlayerTracksController(), new TGUndoableTrackSoloMuteHideController());
+		this.map(TGSetTrackSoloAction.NAME, LOCKABLE, new TGUpdatePlayerTracksController(), new TGUndoableTrackSoloMuteHideController());
 		this.map(TGChangeTrackMuteAction.NAME, LOCKABLE | SHORTCUT);
 		this.map(TGChangeTrackSoloAction.NAME, LOCKABLE | SHORTCUT);
 		this.map(TGCloneTrackAction.NAME, LOCKABLE | DISABLE_ON_PLAY | SHORTCUT, UPDATE_SONG_CTL, new TGUndoableCloneTrackController());
