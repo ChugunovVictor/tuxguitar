@@ -162,7 +162,7 @@ public class ViewMenuItem extends TGMenuItem {
 		this.showTableViewer.setChecked(TGTableViewer.getInstance(this.findContext()).isVisible());
 		this.showInstruments.setChecked(!TuxGuitar.getInstance().getChannelManager().isDisposed());
 		this.showTransport.setChecked(!TGTransportDialog.getInstance(this.findContext()).isDisposed());
-		this.showPiano.setChecked(!TuxGuitar.getInstance().getPianoEditor().isVisible());
+		this.showPiano.setChecked(TuxGuitar.getInstance().getPianoEditor().isVisible());
 		this.showMatrix.setChecked(!TuxGuitar.getInstance().getMatrixEditor().isDisposed());
 		this.pageLayout.setChecked(tablature.getViewLayout() instanceof TGLayoutVertical);
 		this.linearLayout.setChecked(tablature.getViewLayout() instanceof TGLayoutHorizontal);
