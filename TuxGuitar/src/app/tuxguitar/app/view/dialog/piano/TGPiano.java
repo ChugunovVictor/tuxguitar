@@ -259,6 +259,19 @@ public class TGPiano {
 					}
 				}
 
+                {
+                    String octaveText = TGMusicKeyUtils.noteName(i, 0);
+
+                    final float verticalOffset = 4;
+                    float textWidth = painter.getFMWidth(octaveText);
+                    float horizontalOffset = ((float)NATURAL_WIDTH - textWidth) / 2.0f;
+                    final float minimalHOffset = 1.0f;
+                    horizontalOffset = Math.max(horizontalOffset, minimalHOffset);
+
+                    painter.setForeground(this.config.getColorOctaveNumber());
+                    painter.drawString(octaveText, x+horizontalOffset, y + NATURAL_HEIGHT - verticalOffset);
+                }
+
 				x += NATURAL_WIDTH;
 			}else{
 				painter.setBackground(this.config.getColorNotNatural());

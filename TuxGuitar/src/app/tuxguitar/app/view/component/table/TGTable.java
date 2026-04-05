@@ -23,7 +23,7 @@ public class TGTable {
 	private UIPanel columnControl;
 	private UIPanel rowControl;
 	private TGTableHeaderLabel columnNumber;
-	private TGTableHeaderLabel columnSoloMute;
+	private TGTableHeaderLabel columnSoloMuteHide;
 	private TGTableHeaderLabel columnName;
 	private TGTableHeaderLabel columnInstrument;
 	private TGTableHeaderMeasures columnCanvas;
@@ -44,7 +44,7 @@ public class TGTable {
 		this.columnControl = uiFactory.createPanel(this.table, false);
 
 		this.columnNumber = new TGTableHeaderLabel(this);
-		this.columnSoloMute = new TGTableHeaderLabel(this);
+		this.columnSoloMuteHide = new TGTableHeaderLabel(this);
 		this.columnName = new TGTableHeaderLabel(this);
 		this.columnInstrument = new TGTableHeaderLabel(this);
 		this.columnCanvas = new TGTableHeaderMeasures(this);
@@ -82,7 +82,7 @@ public class TGTable {
 
 		int columnIndex = 0;
 		this.createColumnHeaderLayout(uiLayout, this.columnNumber, ++columnIndex, false, null);
-		this.createColumnHeaderLayout(uiLayout, this.columnSoloMute, ++columnIndex, false, null);
+		this.createColumnHeaderLayout(uiLayout, this.columnSoloMuteHide, ++columnIndex, false, null);
 		this.createColumnHeaderLayout(uiLayout, this.columnName, ++columnIndex, false, 250f);
 		this.createColumnDividerLayout(uiLayout, dividerHelper.createDivider(this.columnName, this.columnInstrument, false), ++columnIndex);
 		this.createColumnHeaderLayout(uiLayout, this.columnInstrument, ++columnIndex, false, 250f);
@@ -139,8 +139,8 @@ public class TGTable {
 		return this.columnNumber;
 	}
 
-	public TGTableHeaderLabel getColumnSoloMute() {
-		return this.columnSoloMute;
+	public TGTableHeaderLabel getColumnSoloMuteHide() {
+		return this.columnSoloMuteHide;
 	}
 
 	public TGTableHeaderMeasures getColumnCanvas() {

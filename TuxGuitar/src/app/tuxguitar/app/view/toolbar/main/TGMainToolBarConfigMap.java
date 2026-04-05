@@ -146,13 +146,7 @@ import app.tuxguitar.editor.action.note.TGChangePickStrokeUpAction;
 import app.tuxguitar.editor.action.note.TGChangeTiedNoteAction;
 import app.tuxguitar.editor.action.note.TGChangeVelocityAction;
 import app.tuxguitar.editor.action.note.TGToggleNoteEnharmonicAction;
-import app.tuxguitar.editor.action.track.TGAddNewTrackAction;
-import app.tuxguitar.editor.action.track.TGChangeTrackMuteAction;
-import app.tuxguitar.editor.action.track.TGChangeTrackSoloAction;
-import app.tuxguitar.editor.action.track.TGCloneTrackAction;
-import app.tuxguitar.editor.action.track.TGMoveTrackDownAction;
-import app.tuxguitar.editor.action.track.TGMoveTrackUpAction;
-import app.tuxguitar.editor.action.track.TGRemoveTrackAction;
+import app.tuxguitar.editor.action.track.*;
 import app.tuxguitar.editor.action.transport.TGTransportCountDownAction;
 import app.tuxguitar.editor.action.transport.TGTransportMetronomeAction;
 import app.tuxguitar.editor.clipboard.TGClipboard;
@@ -500,6 +494,12 @@ public class TGMainToolBarConfigMap {
 				return TuxGuitar.getInstance().getTablatureEditor().getTablature().getCaret().getTrack().isMute();
 			}
 		});
+        registerCheckable("track.hide", TGChangeTrackHideAction.NAME, TGIconManager.TRACK_HIDE, new TGMainToolBarItemUpdater() {
+            @Override
+            public boolean checked(TGContext context, boolean isRunning) {
+                return TuxGuitar.getInstance().getTablatureEditor().getTablature().getCaret().getTrack().isHide();
+            }
+        });
 
 		//------- MEASURE --------
 		this.groupName = "measure";

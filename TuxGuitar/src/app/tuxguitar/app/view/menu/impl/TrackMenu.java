@@ -6,13 +6,7 @@ import app.tuxguitar.app.action.impl.track.TGGoFirstTrackAction;
 import app.tuxguitar.app.action.impl.track.TGGoPreviousTrackAction;
 import app.tuxguitar.app.action.impl.track.TGGoNextTrackAction;
 import app.tuxguitar.app.action.impl.track.TGGoLastTrackAction;
-import app.tuxguitar.editor.action.track.TGAddNewTrackAction;
-import app.tuxguitar.editor.action.track.TGCloneTrackAction;
-import app.tuxguitar.editor.action.track.TGRemoveTrackAction;
-import app.tuxguitar.editor.action.track.TGMoveTrackUpAction;
-import app.tuxguitar.editor.action.track.TGMoveTrackDownAction;
-import app.tuxguitar.editor.action.track.TGChangeTrackSoloAction;
-import app.tuxguitar.editor.action.track.TGChangeTrackMuteAction;
+import app.tuxguitar.editor.action.track.*;
 import app.tuxguitar.app.action.impl.track.TGToggleLyricEditorAction;
 import app.tuxguitar.app.system.icons.TGIconManager;
 import app.tuxguitar.app.action.impl.track.TGOpenTrackPropertiesDialogAction;
@@ -35,6 +29,7 @@ public class TrackMenu extends TGMenuItem {
 	private UIMenuActionItem moveDown;
 	private UIMenuCheckableItem changeSolo;
 	private UIMenuCheckableItem changeMute;
+	private UIMenuCheckableItem changeHide;
 	private UIMenuActionItem lyrics;
 	private UIMenuActionItem properties;
 
@@ -101,7 +96,11 @@ public class TrackMenu extends TGMenuItem {
 			this.changeMute = this.menu.createCheckItem();
 			this.changeMute.addSelectionListener(this.createActionProcessor(TGChangeTrackMuteAction.NAME));
 
-			//--SEPARATOR--
+            //--HIDE--
+            this.changeHide = this.menu.createCheckItem();
+            this.changeHide.addSelectionListener(this.createActionProcessor(TGChangeTrackHideAction.NAME));
+
+            //--SEPARATOR--
 			this.menu.createSeparator();
 
 			//--LYRICS--
@@ -130,6 +129,7 @@ public class TrackMenu extends TGMenuItem {
 			setMenuItemTextAndAccelerator(this.moveDown, "track.move-down", TGMoveTrackDownAction.NAME);
 			setMenuItemTextAndAccelerator(this.changeSolo, "track.solo", TGChangeTrackSoloAction.NAME);
 			setMenuItemTextAndAccelerator(this.changeMute, "track.mute", TGChangeTrackMuteAction.NAME);
+			setMenuItemTextAndAccelerator(this.changeHide, "track.hide", TGChangeTrackHideAction.NAME);
 			setMenuItemTextAndAccelerator(this.lyrics, "track.lyrics", TGToggleLyricEditorAction.NAME);
 			setMenuItemTextAndAccelerator(this.properties, "track.properties", TGOpenTrackPropertiesDialogAction.NAME);
 		}
@@ -169,6 +169,7 @@ public class TrackMenu extends TGMenuItem {
 		this.moveDown.setImage(TuxGuitar.getInstance().getIconManager().getImageByName(TGIconManager.ARROW_DOWN));
 		this.changeSolo.setImage(TuxGuitar.getInstance().getIconManager().getImageByName(TGIconManager.TRACK_SOLO));
 		this.changeMute.setImage(TuxGuitar.getInstance().getIconManager().getImageByName(TGIconManager.TRACK_MUTE));
+		this.changeHide.setImage(TuxGuitar.getInstance().getIconManager().getImageByName(TGIconManager.TRACK_HIDE));
 	}
 
 	public boolean isDisposed(){

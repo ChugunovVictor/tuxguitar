@@ -483,6 +483,10 @@ public class TGTrackManager {
 		track.setSolo(track.isMute() ? false : track.isSolo());
 	}
 
+    public void changeHide(TGTrack track,boolean hide){
+        track.setHide(hide);
+    }
+
 	public void changeInfo(TGTrack track,String name,TGColor color,int offset, int maxFret){
 		this.changeInfo(track, name, color, offset);
 		this.removeNotesAfterFret(track, maxFret);

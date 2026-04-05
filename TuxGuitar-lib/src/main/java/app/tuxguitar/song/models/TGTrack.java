@@ -29,6 +29,7 @@ public abstract class TGTrack {
 	private int channelId;
 	private boolean solo;
 	private boolean mute;
+	private boolean hide;
 	private String name;
 	private List<TGMeasure> measures;
 	private List<TGString> strings;
@@ -145,7 +146,15 @@ public abstract class TGTrack {
 		this.mute = mute;
 	}
 
-	public int getChannelId() {
+    public boolean isHide() {
+        return this.hide;
+    }
+
+    public void setHide(boolean hide) {
+        this.hide = hide;
+    }
+
+    public int getChannelId() {
 		return this.channelId;
 	}
 

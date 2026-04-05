@@ -80,6 +80,7 @@ public class TGIconManager {
 	public static final String TRACK_REMOVE = "track_remove.22x22.svg";
 	public static final String TRACK_SOLO = "track_solo.22x22.svg";
 	public static final String TRACK_MUTE = "track_mute.22x22.svg";
+	public static final String TRACK_HIDE = "track_hide.22x22.svg";
 	public static final String MEASURE_FIRST = "measure_first.22x22.svg";
 	public static final String MEASURE_LAST ="measure_last.22x22.svg";
 	public static final String MEASURE_PREVIOUS = "measure_previous.22x22.svg";
@@ -221,6 +222,10 @@ public class TGIconManager {
 	private UIImage muteDisabled;
 	private UIImage muteDim;
 	private UIImage muteDisabledDim;
+    private UIImage hide;
+    private UIImage hideDisabled;
+    private UIImage hideDim;
+    private UIImage hideDisabledDim;
 	private UIImage OK;
 	private UIImage KO;
 	
@@ -326,6 +331,7 @@ public class TGIconManager {
 		loadIcon(TRACK_REMOVE);
 		loadIcon(TRACK_SOLO);
 		loadIcon(TRACK_MUTE);
+		loadIcon(TRACK_HIDE);
 		loadIcon(DOTTED);
 		loadIcon(DOUBLE_DOTTED);
 		loadIcon(DIVISION_TYPE);
@@ -448,6 +454,10 @@ public class TGIconManager {
 		loadIcon(ZOOM_OUT);
 		loadIcon(ZOOM_RESET);
 		loadIcon(ZOOM_IN);
+        this.hide = loadIcon("hide.16x16.svg");
+        this.hideDisabled = loadIcon("hide-disabled.16x16.svg");
+        this.hideDim = loadIcon("hide-dim.16x16.svg");
+        this.hideDisabledDim = loadIcon("hide-disabled-dim.16x16.svg");
 		this.OK = loadIcon("measure_status_ok.22x22.svg");
 		this.KO = loadIcon("measure_status_error.22x22.svg");
 	}
@@ -708,6 +718,22 @@ public class TGIconManager {
 	public UIImage getMuteDisabledDim() {
 		return muteDisabledDim;
 	}
+
+    public UIImage getHide() {
+        return hide;
+    }
+
+    public UIImage getHideDisabled() {
+        return hideDisabled;
+    }
+
+    public UIImage getHideDim() {
+        return hideDim;
+    }
+
+    public UIImage getHideDisabledDim() {
+        return hideDisabledDim;
+    }
 
 	public UIImage getOK() {
 		return this.OK;

@@ -8,6 +8,7 @@ import app.tuxguitar.document.TGDocumentContextAttributes;
 import app.tuxguitar.editor.action.TGActionProcessor;
 import app.tuxguitar.editor.action.track.TGChangeTrackMuteAction;
 import app.tuxguitar.editor.action.track.TGChangeTrackSoloAction;
+import app.tuxguitar.editor.action.track.TGChangeTrackHideAction;
 import app.tuxguitar.song.models.TGTrack;
 import app.tuxguitar.ui.event.*;
 import app.tuxguitar.ui.layout.UITableLayout;
@@ -19,6 +20,7 @@ public class TGTableRowButtonsCell extends TGTableRowCell {
 
   private TGIconCheckButton soloButton;
   private TGIconCheckButton muteButton;
+  private TGIconCheckButton hideButton;
   private TGContext context;
 
   public TGTableRowButtonsCell(final TGTableRow row) {
@@ -28,12 +30,16 @@ public class TGTableRowButtonsCell extends TGTableRowCell {
 
     this.soloButton = new TGIconCheckButton(table.getUIFactory(), getControl());
     this.muteButton = new TGIconCheckButton(table.getUIFactory(), getControl());
+    this.hideButton = new TGIconCheckButton(table.getUIFactory(), getControl());
     table.appendListeners(this.soloButton.getControl());
     table.appendListeners(this.muteButton.getControl());
+    table.appendListeners(this.hideButton.getControl());
     this.soloButton.addSelectionListener(createClickListener(TGChangeTrackSoloAction.NAME));
     this.muteButton.addSelectionListener(createClickListener(TGChangeTrackMuteAction.NAME));
+    this.hideButton.addSelectionListener(createClickListener(TGChangeTrackHideAction.NAME));
     getLayout().set(this.soloButton.getControl(), 1, 1, UITableLayout.ALIGN_CENTER, UITableLayout.ALIGN_CENTER, false, false, 1, 1, null, null, 2f);
     getLayout().set(this.muteButton.getControl(), 1, 2, UITableLayout.ALIGN_CENTER, UITableLayout.ALIGN_CENTER, false, false, 1, 1, null, null, 2f);
+    getLayout().set(this.hideButton.getControl(), 1, 3, UITableLayout.ALIGN_CENTER, UITableLayout.ALIGN_CENTER, false, false, 1, 1, null, null, 2f);
     loadProperties();
     loadIcons();
   }
@@ -69,6 +75,7 @@ public class TGTableRowButtonsCell extends TGTableRowCell {
     super.setMenu(menu);
     this.soloButton.getControl().setPopupMenu(menu);
     this.muteButton.getControl().setPopupMenu(menu);
+    this.hideButton.getControl().setPopupMenu(menu);
   }
 
   @Override
@@ -76,6 +83,7 @@ public class TGTableRowButtonsCell extends TGTableRowCell {
     super.addMouseDownListener(listener);
     this.soloButton.getControl().addMouseDownListener(listener);
     this.muteButton.getControl().addMouseDownListener(listener);
+    this.hideButton.getControl().addMouseDownListener(listener);
   }
 
   @Override
@@ -83,6 +91,7 @@ public class TGTableRowButtonsCell extends TGTableRowCell {
     super.addMouseUpListener(listener);
     this.soloButton.getControl().addMouseUpListener(listener);
     this.muteButton.getControl().addMouseUpListener(listener);
+    this.hideButton.getControl().addMouseUpListener(listener);
   }
 
   public void setSolo(boolean solo) {
@@ -93,9 +102,14 @@ public class TGTableRowButtonsCell extends TGTableRowCell {
     this.muteButton.setSelected(mute);
   }
 
+  public void setHide(boolean hide) {
+    this.hideButton.setSelected(hide);
+  }
+
   private void loadProperties() {
     this.soloButton.getControl().setToolTipText(TuxGuitar.getProperty("track.solo"));
     this.muteButton.getControl().setToolTipText(TuxGuitar.getProperty("track.mute"));
+    this.hideButton.getControl().setToolTipText(TuxGuitar.getProperty("track.hide"));
   }
 
   public void loadIcons() {
@@ -108,5 +122,9 @@ public class TGTableRowButtonsCell extends TGTableRowCell {
     this.muteButton.setSelectedIcon(iconManager.getMuteDim());
     this.muteButton.setHoveredIcon(iconManager.getMuteDisabled());
     this.muteButton.setSelectedHoveredIcon(iconManager.getMute());
+    this.hideButton.setIcon(iconManager.getHideDisabledDim());
+    this.hideButton.setSelectedIcon(iconManager.getHideDim());
+    this.hideButton.setHoveredIcon(iconManager.getHideDisabled());
+    this.hideButton.setSelectedHoveredIcon(iconManager.getHide());
   }
 }
