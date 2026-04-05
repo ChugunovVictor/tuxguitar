@@ -44,6 +44,7 @@ public abstract class TGTrack {
 		this.channelId = -1;
 		this.solo = false;
 		this.mute = false;
+		this.hide = false;
 		this.name = new String();
 		this.measures = new ArrayList<TGMeasure>();
 		this.strings = new ArrayList<TGString>();
@@ -252,6 +253,7 @@ public abstract class TGTrack {
 		this.setOffset(track.getOffset());
 		this.setSolo(track.isSolo());
 		this.setMute(track.isMute());
+		this.setHide(track.isHide());
 		this.setChannelId(track.getChannelId());
 		this.getColor().copyFrom(track.getColor());
 		this.getLyrics().copyFrom(track.getLyrics());

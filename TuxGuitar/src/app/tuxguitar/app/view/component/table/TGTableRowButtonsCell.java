@@ -61,6 +61,7 @@ public class TGTableRowButtonsCell extends TGTableRowCell {
     super.setBgColor(background);
     this.soloButton.getControl().setBgColor(background);
     this.muteButton.getControl().setBgColor(background);
+    this.hideButton.getControl().setBgColor(background);
   }
 
   @Override
@@ -68,6 +69,7 @@ public class TGTableRowButtonsCell extends TGTableRowCell {
     super.setFgColor(foreground);
     this.soloButton.getControl().setFgColor(foreground);
     this.muteButton.getControl().setFgColor(foreground);
+    this.hideButton.getControl().setFgColor(foreground);
   }
 
   @Override

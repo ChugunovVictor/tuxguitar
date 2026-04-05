@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="561a149f-1a74-431b-9a15-2a59b2771938" name="Changes" comment="Hide track">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TuxGuitar-editor-utils/src/main/java/app/tuxguitar/editor/undo/impl/track/TGUndoableTrackBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/TuxGuitar-editor-utils/src/main/java/app/tuxguitar/editor/undo/impl/track/TGUndoableTrackBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TuxGuitar-editor-utils/src/main/java/app/tuxguitar/editor/undo/impl/track/TGUndoableTrackSoloMute.java" beforeDir="false" afterPath="$PROJECT_DIR$/TuxGuitar-editor-utils/src/main/java/app/tuxguitar/editor/undo/impl/track/TGUndoableTrackSoloMuteHide.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TuxGuitar-editor-utils/src/main/java/app/tuxguitar/editor/undo/impl/track/TGUndoableTrackSoloMuteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TuxGuitar-editor-utils/src/main/java/app/tuxguitar/editor/undo/impl/track/TGUndoableTrackSoloMuteHideController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TuxGuitar-lib/src/main/java/app/tuxguitar/io/tg/TGSongReaderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TuxGuitar-lib/src/main/java/app/tuxguitar/io/tg/TGSongReaderImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TuxGuitar-lib/src/main/java/app/tuxguitar/io/tg/TGSongWriterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TuxGuitar-lib/src/main/java/app/tuxguitar/io/tg/TGSongWriterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TuxGuitar-lib/src/main/java/app/tuxguitar/io/tg/TGStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/TuxGuitar-lib/src/main/java/app/tuxguitar/io/tg/TGStream.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TuxGuitar-lib/src/test/resources/test_20.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TuxGuitar-lib/src/test/resources/test_20.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TuxGuitar-lib/src/test/resources/tuxguitar_20.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/TuxGuitar-lib/src/test/resources/tuxguitar_20.xsd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/action/installer/TGActionConfigMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/action/installer/TGActionConfigMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TuxGuitar-lib/src/main/java/app/tuxguitar/song/models/TGTrack.java" beforeDir="false" afterPath="$PROJECT_DIR$/TuxGuitar-lib/src/main/java/app/tuxguitar/song/models/TGTrack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/view/component/table/TGTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/view/component/table/TGTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/view/component/table/TGTableRowButtonsCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/view/component/table/TGTableRowButtonsCell.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -372,7 +365,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775424466352</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Hide track">
+      <option name="closed" value="true" />
+      <created>1775425055661</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1775425055661</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
