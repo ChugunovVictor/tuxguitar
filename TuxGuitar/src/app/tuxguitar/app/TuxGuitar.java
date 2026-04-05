@@ -145,9 +145,11 @@ public class TuxGuitar {
 		this.getPluginManager().connectEnabled();
 		this.restoreControlsConfig();
 		this.restorePlayerConfig();
+        this.getKeyBindingManager().init();
 
 		// Priority 4 ----------------------------------------------//
 		TGWindow.getInstance(TuxGuitar.this.context).open();
+        this.getKeyBindingManager().appendListenersTo(TGWindow.getInstance(TuxGuitar.this.context).getWindow());
 
 		this.startSong(url);
 		this.setInitialized(true);

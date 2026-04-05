@@ -12,6 +12,7 @@ import app.tuxguitar.app.util.TGFileUtils;
 import app.tuxguitar.editor.action.TGActionProcessor;
 import app.tuxguitar.ui.resource.UIKeyCombination;
 import app.tuxguitar.ui.widget.UIControl;
+import app.tuxguitar.ui.widget.UIWindow;
 import app.tuxguitar.util.TGContext;
 import app.tuxguitar.util.singleton.TGSingletonFactory;
 import app.tuxguitar.util.singleton.TGSingletonUtil;
@@ -119,6 +120,10 @@ public class KeyBindingActionManager {
 	public void appendListenersTo(UIControl control){
 		control.addKeyPressedListener(this.listener);
 	}
+
+    public void appendListenersTo(UIWindow control){
+        control.addKeyPressedListener(this.listener);
+    }
 
 	public void processKeyBinding(UIKeyCombination kb){
 		final String actionId = getActionForKeyBinding(kb);
