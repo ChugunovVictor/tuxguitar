@@ -42,8 +42,7 @@ public class TGLayoutHorizontal extends TGLayout{
 		Iterator<TGTrack> tracks = getSong().getTracks();
 		while(tracks.hasNext()){
 			TGTrackImpl track = (TGTrackImpl) tracks.next();
-			if(number < 0 || track.getNumber() == number){
-
+			if((number < 0 && !track.isHide()) || track.getNumber() == number){
 				TGTrackSpacing ts = new TGTrackSpacing(this) ;
 				ts.setSize(TGTrackSpacing.POSITION_SCORE_MIDDLE_LINES, ((style & DISPLAY_SCORE) != 0 ?( (getScoreLineSpacing() * 5) ):0));
 				((TGLyricImpl)track.getLyrics()).start();
@@ -104,7 +103,7 @@ public class TGLayoutHorizontal extends TGLayout{
 		Iterator<TGTrack> tracks = getSong().getTracks();
 		while(tracks.hasNext()){
 			TGTrackImpl nextTrack = (TGTrackImpl) tracks.next();
-			if(number < 0 || nextTrack.getNumber() == number){
+			if((number < 0 && !nextTrack.isHide()) || nextTrack.getNumber() == number){
 				track = nextTrack;
 			}
 		}
