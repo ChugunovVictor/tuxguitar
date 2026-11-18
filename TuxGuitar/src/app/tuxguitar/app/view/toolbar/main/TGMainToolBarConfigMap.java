@@ -98,6 +98,7 @@ import app.tuxguitar.app.action.impl.view.TGOpenMainToolBarSettingsDialogAction;
 import app.tuxguitar.app.action.impl.view.TGToggleChannelsDialogAction;
 import app.tuxguitar.app.action.impl.view.TGToggleEditToolbarAction;
 import app.tuxguitar.app.action.impl.view.TGToggleMatrixEditorAction;
+import app.tuxguitar.app.action.impl.view.TGToggleFretBoardEditorAction;
 import app.tuxguitar.app.action.impl.view.TGTogglePianoEditorAction;
 import app.tuxguitar.app.action.impl.view.TGToggleTableViewerAction;
 import app.tuxguitar.app.action.impl.view.TGToggleTransportDialogAction;
@@ -109,6 +110,7 @@ import app.tuxguitar.app.view.component.tab.edit.EditorKit;
 import app.tuxguitar.app.view.component.table.TGTableViewer;
 import app.tuxguitar.app.view.dialog.channel.TGChannelManagerDialog;
 import app.tuxguitar.app.view.dialog.piano.TGPianoEditor;
+import app.tuxguitar.app.view.dialog.fretboard.TGFretBoardEditor;
 import app.tuxguitar.app.view.dialog.transport.TGTransportDialog;
 import app.tuxguitar.app.view.toolbar.edit.TGEditToolBar;
 import app.tuxguitar.document.TGDocumentContextAttributes;
@@ -318,7 +320,14 @@ public class TGMainToolBarConfigMap {
                         return TGPianoEditor.getInstance(context).isVisible();
                     }
                 });
-		registerCheckable("view.show-instruments", TGToggleChannelsDialogAction.NAME, TGIconManager.INSTRUMENTS,
+        registerCheckable("view.show-fretboard", TGToggleFretBoardEditorAction.NAME, TGIconManager.FRETBOARD,
+                new TGMainToolBarItemUpdater() {
+                    @Override
+                    public boolean checked(TGContext context, boolean isRunning) {
+                        return TGFretBoardEditor.getInstance(context).isVisible();
+                    }
+                });
+        registerCheckable("view.show-instruments", TGToggleChannelsDialogAction.NAME, TGIconManager.INSTRUMENTS,
 				new TGMainToolBarItemUpdater() {
 					@Override
 					public boolean checked(TGContext context, boolean isRunning) {

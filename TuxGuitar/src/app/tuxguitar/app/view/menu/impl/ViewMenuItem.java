@@ -16,6 +16,7 @@ import app.tuxguitar.app.action.impl.layout.TGSetTablatureEnabledAction;
 import app.tuxguitar.app.action.impl.view.TGOpenMainToolBarSettingsDialogAction;
 import app.tuxguitar.app.action.impl.view.TGToggleChannelsDialogAction;
 import app.tuxguitar.app.action.impl.view.TGToggleEditToolbarAction;
+import app.tuxguitar.app.action.impl.view.TGToggleFretBoardEditorAction;
 import app.tuxguitar.app.action.impl.view.TGToggleMainToolbarAction;
 import app.tuxguitar.app.action.impl.view.TGToggleMatrixEditorAction;
 import app.tuxguitar.app.action.impl.view.TGTogglePianoEditorAction;
@@ -44,6 +45,7 @@ public class ViewMenuItem extends TGMenuItem {
 	private UIMenuActionItem editMainToolbar;
 	private UIMenuCheckableItem showEditToolbar;
 	private UIMenuCheckableItem showTableViewer;
+    private UIMenuCheckableItem showFretBoard;
 	private UIMenuCheckableItem showInstruments;
 	private UIMenuCheckableItem showTransport;
 	private UIMenuCheckableItem showPiano;
@@ -80,6 +82,12 @@ public class ViewMenuItem extends TGMenuItem {
 		//--TRACKS TABLE--
 		this.showTableViewer = this.layoutMenuItem.getMenu().createCheckItem();
 		this.showTableViewer.addSelectionListener(this.createActionProcessor(TGToggleTableViewerAction.NAME));
+
+        //--FRETBOARD--
+        this.showFretBoard = this.layoutMenuItem.getMenu().createCheckItem();
+        this.showFretBoard.addSelectionListener(this.createActionProcessor(TGToggleFretBoardEditorAction.NAME));
+
+        this.layoutMenuItem.getMenu().createSeparator();
 
         //--PIANO--
         this.showPiano = this.layoutMenuItem.getMenu().createCheckItem();
@@ -160,7 +168,8 @@ public class ViewMenuItem extends TGMenuItem {
 		this.showMainToolbar.setChecked(TGMainToolBar.getInstance(this.findContext()).isVisible());
 		this.showEditToolbar.setChecked(TGEditToolBar.getInstance(this.findContext()).isVisible());
 		this.showTableViewer.setChecked(TGTableViewer.getInstance(this.findContext()).isVisible());
-		this.showInstruments.setChecked(!TuxGuitar.getInstance().getChannelManager().isDisposed());
+        this.showFretBoard.setChecked(TuxGuitar.getInstance().getFretBoardEditor().isVisible());
+        this.showInstruments.setChecked(!TuxGuitar.getInstance().getChannelManager().isDisposed());
 		this.showTransport.setChecked(!TGTransportDialog.getInstance(this.findContext()).isDisposed());
 		this.showPiano.setChecked(TuxGuitar.getInstance().getPianoEditor().isVisible());
 		this.showMatrix.setChecked(!TuxGuitar.getInstance().getMatrixEditor().isDisposed());
@@ -183,7 +192,8 @@ public class ViewMenuItem extends TGMenuItem {
 		setMenuItemTextAndAccelerator(this.showEditToolbar, "view.show-edit-toolbar", TGToggleMainToolbarAction.NAME);
 		setMenuItemTextAndAccelerator(this.showTableViewer, "view.show-table-viewer", TGToggleTableViewerAction.NAME);
 		setMenuItemTextAndAccelerator(this.showInstruments, "view.show-instruments", TGToggleChannelsDialogAction.NAME);
-		setMenuItemTextAndAccelerator(this.showTransport, "view.show-transport", TGToggleTransportDialogAction.NAME);
+        setMenuItemTextAndAccelerator(this.showFretBoard, "view.show-fretboard", TGToggleFretBoardEditorAction.NAME);
+        setMenuItemTextAndAccelerator(this.showTransport, "view.show-transport", TGToggleTransportDialogAction.NAME);
 		setMenuItemTextAndAccelerator(this.showPiano, "view.show-piano", TGTogglePianoEditorAction.NAME);
 		setMenuItemTextAndAccelerator(this.showMatrix, "view.show-matrix", TGToggleMatrixEditorAction.NAME);
 		setMenuItemTextAndAccelerator(this.pageLayout, "view.layout.page", TGSetPageLayoutAction.NAME);
@@ -206,7 +216,8 @@ public class ViewMenuItem extends TGMenuItem {
 		this.showEditToolbar.setImage(TuxGuitar.getInstance().getIconManager().getImageByName(TGIconManager.TOOLBAR_EDIT));
 		this.showTableViewer.setImage(TuxGuitar.getInstance().getIconManager().getImageByName(TGIconManager.TABLE_VIEWER));
 		this.showInstruments.setImage(TuxGuitar.getInstance().getIconManager().getImageByName(TGIconManager.INSTRUMENTS));
-		this.showTransport.setImage(TuxGuitar.getInstance().getIconManager().getImageByName(TGIconManager.TRANSPORT));
+        this.showFretBoard.setImage(TuxGuitar.getInstance().getIconManager().getImageByName(TGIconManager.FRETBOARD));
+        this.showTransport.setImage(TuxGuitar.getInstance().getIconManager().getImageByName(TGIconManager.TRANSPORT));
 		this.showPiano.setImage(TuxGuitar.getInstance().getIconManager().getImageByName(TGIconManager.PIANO));
 		this.showMatrix.setImage(TuxGuitar.getInstance().getIconManager().getImageByName(TGIconManager.MATRIX));
 		this.pageLayout.setImage(TuxGuitar.getInstance().getIconManager().getImageByName(TGIconManager.LAYOUT_PAGE));

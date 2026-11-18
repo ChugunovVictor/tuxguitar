@@ -49,6 +49,7 @@ import app.tuxguitar.player.base.MidiPlayer;
 import app.tuxguitar.player.base.MidiPlayerException;
 import app.tuxguitar.player.impl.sequencer.MidiSequencerProviderImpl;
 import app.tuxguitar.resource.TGResourceManager;
+import app.tuxguitar.app.view.dialog.fretboard.TGFretBoardEditor;
 import app.tuxguitar.song.helpers.tuning.TuningManager;
 import app.tuxguitar.song.managers.TGSongManager;
 import app.tuxguitar.song.models.TGBeat;
@@ -203,6 +204,9 @@ public class TuxGuitar {
 			new TGActionProcessor(this.context, TGToggleMarkerListAction.NAME).process();
 		}
 	}
+    public TGFretBoardEditor getFretBoardEditor(){
+        return TGFretBoardEditor.getInstance(this.context);
+    }
 
 	public TGTableViewer getTable(){
 		return TGTableViewer.getInstance(this.context);

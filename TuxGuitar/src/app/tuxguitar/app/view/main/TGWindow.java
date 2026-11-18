@@ -11,6 +11,7 @@ import app.tuxguitar.app.ui.TGApplication;
 import app.tuxguitar.app.view.component.tabfolder.TGTabFolder;
 import app.tuxguitar.app.view.component.table.TGTableViewer;
 import app.tuxguitar.app.view.dialog.piano.TGPianoEditor;
+import app.tuxguitar.app.view.dialog.fretboard.TGFretBoardEditor;
 import app.tuxguitar.app.view.toolbar.edit.TGEditToolBar;
 import app.tuxguitar.app.view.toolbar.main.TGMainToolBar;
 import app.tuxguitar.app.view.util.TGCursorController;
@@ -102,6 +103,9 @@ public class TGWindow implements TGEventListener {
 		UIPanel bottom = uiFactory.createPanel(this.window, false);
 		bottom.setLayout(new UITableLayout(0f));
 		bottom.getLayout().set(UITableLayout.IGNORE_INVISIBLE, true);
+
+        TGFretBoardEditor tgFretBoardEditor = TGFretBoardEditor.getInstance(this.context);
+        tgFretBoardEditor.createFretBoard(bottom, tgConfig.getBooleanValue(TGConfigKeys.SHOW_FRETBOARD));
 
         TGPianoEditor tgPianoEditor = TGPianoEditor.getInstance(this.context);
         tgPianoEditor.createPiano(bottom, tgConfig.getBooleanValue(TGConfigKeys.SHOW_PIANO));

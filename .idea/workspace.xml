@@ -5,10 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="561a149f-1a74-431b-9a15-2a59b2771938" name="Changes" comment="Hide track">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/action/impl/view/TGToggleFretBoardEditorAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/view/dialog/fretboard/TGFretBoard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/view/dialog/fretboard/TGFretBoardConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/view/dialog/fretboard/TGFretBoardEditor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/view/dialog/fretboard/TGFretBoardEditorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/icons/firstfret.5x50.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/icons/fret.2x45.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/icons/fretboard.22x22.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/icons/fretboard_bigger.22x22.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/icons/fretboard_smaller.22x22.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TuxGuitar-lib/src/main/java/app/tuxguitar/graphics/control/TGLayoutHorizontal.java" beforeDir="false" afterPath="$PROJECT_DIR$/TuxGuitar-lib/src/main/java/app/tuxguitar/graphics/control/TGLayoutHorizontal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TuxGuitar-lib/src/main/java/app/tuxguitar/graphics/control/TGLayoutVertical.java" beforeDir="false" afterPath="$PROJECT_DIR$/TuxGuitar-lib/src/main/java/app/tuxguitar/graphics/control/TGLayoutVertical.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/action/impl/system/TGDisposeAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/action/impl/system/TGDisposeAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/action/installer/TGActionConfigMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/action/installer/TGActionConfigMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/action/installer/TGActionInstaller.java" beforeDir="false" afterPath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/action/installer/TGActionInstaller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/system/config/TGConfigDefaults.java" beforeDir="false" afterPath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/system/config/TGConfigDefaults.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/system/config/TGConfigKeys.java" beforeDir="false" afterPath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/system/config/TGConfigKeys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/system/icons/TGIconManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/system/icons/TGIconManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/view/main/TGWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/view/main/TGWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/view/menu/impl/ViewMenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/view/menu/impl/ViewMenuItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/view/toolbar/main/TGMainToolBarConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/view/toolbar/main/TGMainToolBarConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/view/toolbar/main/TGMainToolBarConfigMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/TuxGuitar/src/app/tuxguitar/app/view/toolbar/main/TGMainToolBarConfigMap.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

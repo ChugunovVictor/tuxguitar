@@ -132,6 +132,7 @@ import app.tuxguitar.app.action.impl.view.TGOpenViewAction;
 import app.tuxguitar.app.action.impl.view.TGShowExternalBeatAction;
 import app.tuxguitar.app.action.impl.view.TGToggleChannelsDialogAction;
 import app.tuxguitar.app.action.impl.view.TGToggleEditToolbarAction;
+import app.tuxguitar.app.action.impl.view.TGToggleFretBoardEditorAction;
 import app.tuxguitar.app.action.impl.view.TGToggleMainToolbarAction;
 import app.tuxguitar.app.action.impl.view.TGToggleMatrixEditorAction;
 import app.tuxguitar.app.action.impl.view.TGTogglePianoEditorAction;
@@ -636,7 +637,8 @@ public class TGActionConfigMap extends TGActionMap<TGActionConfig> {
 		this.map(TGOpenAboutDialogAction.NAME, LOCKABLE | SYNC_THREAD |SHORTCUT);
 		this.map(TGHelpGoHomeAction.NAME, LOCKABLE | SYNC_THREAD |SHORTCUT);
 		this.map(TGOpenMainToolBarSettingsDialogAction.NAME, LOCKABLE | SYNC_THREAD | DISABLE_ON_PLAY);
-	}
+        this.map(TGToggleFretBoardEditorAction.NAME, LOCKABLE | SYNC_THREAD |SHORTCUT);
+    }
 
 	private void map(String actionId, int flags) {
 		this.map(actionId, flags, UPDATE_ITEMS_CTL, null);
